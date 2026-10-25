@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Barbearia do Bairro · Agendamento</title>
+  <meta name="description" content="Marque seu corte em menos de um minuto.">
+  <meta name="theme-color" content="#15120f">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23d08b43'/><text x='16' y='22' font-size='16' text-anchor='middle' font-family='Georgia' fill='%2315120f'>B</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="pagina">
+    <header class="topo">
+      <p class="selo">Barbearia do Bairro</p>
+      <h1>Marque seu horário</h1>
+      <p>Escolha o serviço, o dia e a hora. Leva menos de um minuto.</p>
+      <p class="horario-funcionamento">
+        <span>Ter a sex · 9h às 19h</span>
+        <span>Qui até 20h</span>
+        <span>Sáb · 8h às 14h</span>
+      </p>
+    </header>
+
+    <p class="erro" id="erro-geral" role="alert" hidden></p>
+
+    <section class="confirmado" id="confirmado" hidden aria-live="polite">
+      <h2>Horário marcado!</h2>
+      <p id="confirmado-texto"></p>
+      <div class="codigo" id="confirmado-codigo"></div>
+      <p>Guarde esse código. Ele também fica salvo neste aparelho, em "Meus horários".</p>
+      <button class="botao contorno" id="marcar-outro">Marcar outro horário</button>
+    </section>
+
+    <form id="agendamento" novalidate>
+      <section class="passo" id="passo-servico">
+        <h2><span class="numero">1</span> Serviço</h2>
+        <div class="servicos" id="servicos"></div>
+      </section>
+
+      <section class="passo" id="passo-dia" aria-disabled="true">
+        <h2><span class="numero">2</span> Dia</h2>
+        <div class="dias" id="dias"></div>
+      </section>
+
+      <section class="passo" id="passo-horario" aria-disabled="true">
+        <h2><span class="numero">3</span> Horário</h2>
+        <div class="horarios" id="horarios"></div>
+        <p class="dica" id="dica-horario">Escolha um dia para ver os horários livres.</p>
+      </section>
+
+      <section class="passo" id="passo-dados" aria-disabled="true">
+        <h2><span class="numero">4</span> Seus dados</h2>
+        <div class="formulario">
+          <label>Nome
+            <input name="nome" autocomplete="given-name" maxlength="60" required>
+          </label>
+          <label>WhatsApp
+            <input name="telefone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(11) 98765-4321" required>
+          </label>
+          <div class="resumo" id="resumo"></div>
+          <p class="erro" id="erro-formulario" role="alert" hidden></p>
+          <button class="botao" id="confirmar" type="submit">Confirmar horário</button>
+        </div>
+      </section>
+    </form>
+
+    <section class="meus" id="meus" hidden>
+      <h2>Meus horários</h2>
+      <ul id="meus-lista"></ul>
+    </section>
+
+    <p class="rodape">Projeto de estudo · <a href="barbeiro.html">Área do barbeiro</a></p>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="comum.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

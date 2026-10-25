@@ -1,0 +1,3 @@
+# A Netlify publica só a pasta do site; a API roda em outro lugar.
+[build]
+  publish = "frontend"
