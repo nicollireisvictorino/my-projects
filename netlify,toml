@@ -1,0 +1,4 @@
+[build]
+  base = "agenda-barbearia"
+  publish = "frontend"
+  command = ""
